@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GridPage"
+             x:Class="GridPage.MainPage"
+             Padding="30">
+
+    <Page.Resources>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+    </Page.Resources>
+
+    <Grid ColumnSpacing="10" RowSpacing="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+
+        <Label Text="{Binding PlayerName}" FontSize="Large"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+               TextColor="White"
+               BackgroundColor="Purple" />
+
+        <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="Blue" Orientation="Vertical">
+            <Label Text="Hit Points" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding HP}" FontSize="Large"
+                   TextColor="White" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="Red" Orientation="Vertical">
+            <Label Text="Armor Class" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding AC}" FontSize="Large"
+                   TextColor="White" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" Grid.Column="0" BackgroundColor="Red" Orientation="Vertical">
+            <Label Text="Perception" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding Percep}" FontSize="Large"
+                   TextColor="White" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="Blue" Orientation="Vertical">
+            <Label Text="Initiative" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding Init}" FontSize="Large"
+                   TextColor="White" />
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
